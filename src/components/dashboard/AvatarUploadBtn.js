@@ -4,6 +4,7 @@ import { Alert, Button, Modal } from 'rsuite';
 import { useProfile } from '../../context/profile.context';
 import { useModalState } from '../../misc/custom-hooks';
 import { database, storage } from '../../misc/firebase';
+import ProfileAvatar from './ProfileAvatar';
 
 const fileInputType = '.png, .jpeg, .jpg';
 const acceptedFileTypes = ['image/png', 'image/jpeg', 'image/pjpeg'];
@@ -68,6 +69,11 @@ const AvatarUploadBtn = () => {
 
   return (
     <div className="mt-3 text-center">
+      <ProfileAvatar
+        name={profile.name}
+        src={profile.avatar}
+        className="height-200 width-200 img-fullsize font-huge"
+      />
       <div>
         <label
           htmlFor="avatar-upload"
